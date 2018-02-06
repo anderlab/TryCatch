@@ -26,20 +26,18 @@ public class Main_Series {
 		final int BORRAR = 8;
 		final int SALIR = 0;
 		
-		Serie serie;
+		Serie serie=new Serie();
 		
 		
 		ArrayList <Serie> series= new ArrayList <Serie>();
 		
-		String nombreFichero ="src/seriestv";
-		File fichero= new File(nombreFichero);
-		
+	
 		Scanner lectorF;
 		try {
-			lectorF = new Scanner (fichero);
-		
-		Scanner lector= new Scanner (System.in);
-		
+			
+			lectorF= serie.lector();
+	
+		Scanner lector=new Scanner(System.in);
 		int opcion;
 		
 		//Cargamos lista
@@ -120,7 +118,7 @@ public class Main_Series {
 			
 			case GUARDAR:
 				
-				guardarCambios(series,nombreFichero);
+				guardarCambios(series);
 				System.out.println("Cambios guardados, pulse la opcion listar para ver los cambios");
 				
 			break;
@@ -172,9 +170,10 @@ public class Main_Series {
 		}catch (FileNotFoundException e) {
 			
 			//System.err.println("No se ha encontrado el fichero especificado" +" --Error: "+ e.getMessage());
-			
+			Serie serie1=new Serie();
 			System.out.print("No se encuentra la ruta especificada --> ");
-			System.err.println (nombreFichero);
+			System.err.println (serie1.getNombreFichero());
+			
 			
 		}catch (NullPointerException e ){
 			
@@ -286,19 +285,20 @@ public class Main_Series {
 	}
 	
 	
-	private static void guardarCambios( ArrayList <Serie> series, String nombreFichero){
+	private static void guardarCambios( ArrayList <Serie> series){
 		
 		FileWriter fileWriter= null;
 		
 		try{
+			Serie serie = null;
 			
-			fileWriter = new FileWriter (nombreFichero);
+			fileWriter = new FileWriter (serie.getNombreFichero());
 			PrintWriter printWriter = new PrintWriter (fileWriter);
 			
 			Iterator <Serie> it = series.iterator();
 			
 			while(it.hasNext()){
-				Serie serie=it.next();
+				 serie=it.next();
 				printWriter.println(serie.getTitulo()+","+serie.getGenero()+","+serie.getTemporadas()+","+serie.getCapitulos()+","+serie.getDuracion()+","+serie.getAnioEmision()+","+serie.getNombreProductora());
 			}
 			fileWriter.close();

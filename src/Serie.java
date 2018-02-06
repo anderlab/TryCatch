@@ -1,11 +1,39 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Serie extends Programas implements Mostrator {
 	
 
 	private int anioEmision;
+	private String nombreFichero="src/seriestv";
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public Scanner lector() throws FileNotFoundException{
+		
+		File fichero= new File(this.nombreFichero);
+		
+		Scanner lectorF;
+	
+		lectorF = new Scanner (fichero);
+		
+	
+		
+		
+		return lectorF;
+		
+	}
 	
 	
 	
@@ -23,12 +51,6 @@ public class Serie extends Programas implements Mostrator {
 		System.out.println("Productora: "+super.getNombreProductora()+"\n");
 		
 	}
-	
-	
-
-
-
-
 
 	// Getters y Setters
 	public int getAnioEmision() {
@@ -41,8 +63,13 @@ public class Serie extends Programas implements Mostrator {
 
 
 
+	public String getNombreFichero() {
+		return nombreFichero;
+	}
 
+	public void setNombreFichero(String nombreFichero) {
+		this.nombreFichero = nombreFichero;
+	}
 
-	
 
 }
