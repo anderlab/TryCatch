@@ -35,7 +35,7 @@ public class Main_Series {
 		Scanner lectorF;
 		try {
 			
-			lectorF= serie.lector();
+			lectorF= serie.creaLector();
 	
 		Scanner lector=new Scanner(System.in);
 		int opcion;

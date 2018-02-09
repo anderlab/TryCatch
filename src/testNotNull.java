@@ -11,7 +11,7 @@ public class testNotNull {
 	@Test
 	public void test() throws FileNotFoundException {
 		Serie serie= new Serie();
-		assertNotNull(serie.lector());
+		assertNotNull(serie.creaLector());
 	}
 
 }

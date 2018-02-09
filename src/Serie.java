@@ -20,17 +20,14 @@ public class Serie extends Programas implements Mostrator {
 	
 	
 	
-	public Scanner lector() throws FileNotFoundException{
+	public Scanner creaLector() throws FileNotFoundException{
 		
 		File fichero= new File(this.nombreFichero);
 		
 		Scanner lectorF;
 	
 		lectorF = new Scanner (fichero);
-		
-	
-		
-		
+
 		return lectorF;
 		
 	}

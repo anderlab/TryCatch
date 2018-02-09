@@ -10,7 +10,7 @@ public class testNull {
 	public void test() throws FileNotFoundException {
 		
 		Serie serie= new Serie();
-		assertNull(serie.lector());
+		assertNull(serie.creaLector());
 	}
 
 }
