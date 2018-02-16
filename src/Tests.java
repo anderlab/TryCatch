@@ -6,6 +6,9 @@ import java.util.Scanner;
 import org.junit.Test;
 
 public class Tests {
+	
+	
+	//Dos formas de realizar el test
 
 	@Test(expected = FileNotFoundException.class)
 	public void testLector1() throws FileNotFoundException {
