@@ -25,11 +25,11 @@ public class Tests {
 			serie.creaLector();
 			fail("Se esperaba FileNotfoundException");
 		} catch (FileNotFoundException e) {
+			System.err.println("No se ha encontrado el fichero");
 
 		}
 
 	}
 
-	
 
 }

@@ -10,16 +10,6 @@ public class Serie extends Programas implements Mostrator {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public Scanner creaLector() throws FileNotFoundException{
 		
 		File fichero= new File(this.nombreFichero);
